@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
+Необходимо создать функцию-конструктор/класс для продукта.
+Названия: `ProductES5` для es5 стиля, `ProductES6` для es6 стиля.
+При создании объекта от функции-конструктора/класса необходимо передавать имя
+и цену товара, эта информация должна быть сохранена в объекте.
+Также у объекта должна быть возможность выполнить метод `make25Discount`, данный
+метод должен уменьшать стоимость продукта на 25%.
+Необходимо продемонстрировать работу с объектом (в свободной форме).
+-->
+<script>
+  "use strict";
+  // Создадим продукт по стандарту ES5.
+
+  /**
+   * Функция-конструктор для продукта, принимает его название и цену.
+  */
+  function ProductES5 (name, price) {
+    // Присвоим продукту свойства название и цену.
+    this.name = name;
+    this.price = price;
+  }
+
+  // В объект, который будет служить прототипом будущих продуктов добавляем
+  // метод getDiscount25, который будет уменьшать цену продукта на 25%.
+  ProductES5.prototype.getDiscount25 = function() {
+    this.price *= 0.75;
+  };
+
+  // Cоздадим несколько продуктов.
+  const productES5_1 = new ProductES5 ('Монитор Acer V226HQLbid', 19810 ); // price: 19810
+  const productES5_2 = new ProductES5 ('Ноутбук Acer Extensa 15 EX215-31-P3UX', 29990 );
+  const productES5_3 = new ProductES5 ('Принтер лазерный Pantum P2500', 8690 );
+
+  console.log(productES5_1)
+
+  console.log(`Название продукта: ${productES5_1.name}, цена: ${productES5_1.price} руб.`);
+  console.log(`Название продукта: ${productES5_2.name}, цена: ${productES5_2.price} руб.`);
+  console.log(`Название продукта: ${productES5_3.name}, цена: ${productES5_3.price} руб.`);
+
+  //Применим скидку на монитор Acer V226HQLbid.
+  productES5_1.getDiscount25();
+
+  console.log(`Название продукта: ${productES5_1.name}, цена: ${productES5_1.price} руб.`);  // price: 14857.5
+  console.log(`Название продукта: ${productES5_2.name}, цена: ${productES5_2.price} руб.`);
+  console.log(`Название продукта: ${productES5_3.name}, цена: ${productES5_3.price} руб.`);
+
+  // Создадим продукт по стандарту ES6.
+
+  // Создадим класс для продукта.
+  class ProductES6 {
+    // Конструктор продукта.
+    constructor(name, price) {
+      this.name = name;
+      this.price = price;
+    }
+
+  // метод getDiscount25, который будет уменьшать цену продукта на 25%.
+  getDiscount25() {
+    this.price *= 0.75;
+  }    
+  }
+
+  // Cоздадим несколько продуктов.
+  const productES6_1 = new ProductES6 ('Монитор Acer V226HQLbid', 19810 ); // price: 19810
+  const productES6_2 = new ProductES6 ('Ноутбук Acer Extensa 15 EX215-31-P3UX', 29990 );
+  const productES6_3 = new ProductES6 ('Принтер лазерный Pantum P2500', 8690 );
+
+  console.log(productES6_1);
+
+  console.log(`Название продукта: ${productES6_1.name}, цена: ${productES6_1.price} руб.`);
+  console.log(`Название продукта: ${productES6_2.name}, цена: ${productES6_2.price} руб.`);
+  console.log(`Название продукта: ${productES6_3.name}, цена: ${productES6_3.price} руб.`);
+
+  //Применим скидку на монитор Acer V226HQLbid.
+  productES6_1.getDiscount25();
+
+  console.log(`Название продукта: ${productES6_1.name}, цена: ${productES6_1.price} руб.`); // price: 14857.5
+  console.log(`Название продукта: ${productES6_2.name}, цена: ${productES6_2.price} руб.`);
+  console.log(`Название продукта: ${productES6_3.name}, цена: ${productES6_3.price} руб.`);
+
+</script>
+</body>
+</html>
