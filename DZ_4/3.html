@@ -39,7 +39,7 @@
    * @returns {object} - Возвращает объект с разрядами числа или пустой объект в случае
    * ошибки (если ввели неверное число или ввели не число).
    */
-   function getDigitsOfNumber(num) {
+  function getDigitsOfNumber(num) {
     if (!Number.isInteger(num) || num < 0 || num > 999) {
       console.error('Wrong argument, it must be an integer in range [0, 999].');
       return {};
