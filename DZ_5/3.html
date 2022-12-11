@@ -83,7 +83,8 @@
     if (!event.target.classList.contains('super_element')) {
       isContained = 'отсутствует';
     }
-    console.log(`Класс "super_element" "${isContained}" в элементе "${tagName}".`);
+    console.log
+    (`Класс "super_element" "${isContained}" в элементе "${tagName}".`);
   });
   /* Результат работы скрипта: 
   Все теги прогрузились!
@@ -103,8 +104,8 @@
   "Вы навели на textarea."
    */
 
-  document.querySelector('textarea').
-    addEventListener('mouseover', () => console.log('Вы навели на textarea.'));
+  document.querySelector('textarea')
+    .addEventListener('mouseover', () => console.log('Вы навели на textarea.'));
 
   /*
   5. Необходимо повесить событие клика на тег ul. В обработчике события в
